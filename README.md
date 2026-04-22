@@ -177,7 +177,7 @@ docker compose up -d db
 ```
 
 ```bash
-export DATABASE_URL="postgres://postgres:pussyli$%ager@localhost:5432/simple_db"
+export DATABASE_URL="postgres://postgres:<password>@localhost:5432/simple_db"
 cargo run
 ```
 
