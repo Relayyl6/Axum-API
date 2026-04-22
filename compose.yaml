@@ -1,0 +1,25 @@
+services:
+  app:
+    container_name: simple_axum
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgres://postgres:pussyli%24%25ager@db:5432/simple_db
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pussyli$%ager
+      - POSTGRES_DB=simple_db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
